@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body onload="demo()">
+    <h1>Funksjon 5</h1>
+    <button onclick="doClick()">Trykk her</button>
+
+    <p id="demo">pjusk</p>
+    <img src="https://i.ytimg.com/vi/fTJ5o_uW3eM/maxresdefault.jpg" />
+
+    <script>
+
+        function doClick() {
+            alert('Dette skjer i funksjonen doClick');
+
+        }
+        function demo() {
+            document.getElementById('demo').innerHTML = '' + new Date().toTimeString();
+        }
+    </script>
+
+</body>
+</html>
