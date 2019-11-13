@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+    <button onclick="nummer(this)">1</button>
+    <button onclick="nummer(this)">2</button>
+    <button onclick="nummer(this)">3</button>
+    <button onclick="nummer(this)">4</button>
+    <button onclick="nummer(this)">5</button>
+    <button onclick="nummer(this)">6</button>
+    <button onclick="nummer(this)">7</button>
+    <button onclick="nummer(this)">8</button>
+    <button onclick="nummer(this)">9</button>
+
+    <div id="info">Klikk</div>
+    
+    <script>
+    var output = document.getElementById("info");
+    function nummer(telling) {
+        output.innerHTML += telling.innerHTML + '-';
+    }
+
+        </script>
+</body >
+
+
+</html >
