@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Stellas Quiz</title>
+    <style>
+        body {
+            background-color: #ffcccc;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <p>Hvor er jeg fra?</p>
+    <button id="a1" onclick="feil2()">Siljan</button>
+    <p>
+    <button id="a2" onclick="riktigSvar()">Porsgrunn</button>
+    <p>
+    <button id="a3" onclick="feil()">Oslo</button>
+
+
+    <script>
+        function riktigSvar() {
+            document.getElementById('a2').innerHTML = 'Riktig';
+        }
+        function feil2() {
+            document.getElementById('a1').innerHTML = 'Feil';
+        }
+        function feil() {
+            document.getElementById('a3').innerHTML = 'Feil';
+        }
+
+    </script>
+</body>
+</html>
