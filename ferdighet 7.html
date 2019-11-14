@@ -8,15 +8,14 @@
 <body>
     <span>Endre høyde: </span>
     <input id="heightSlider" type="range" min="0" max="1000" step="1" oninput="calculate()" />
-
     <span>Endre bredde:</span>
     <input id="widthSlider" type="range" min="0" max="1000" step="1" oninput="calculate()" />
+    <div id="boks" style="width:500px;height:500px;border:1px solid #000;">
+        <p id="area" />
+        <br />
+        <p id="circumference" />
+    </div>
 
-    <div id="boks" style="width:500px;height:500px;border:1px solid #000;"></div>
-    <p id="area" />
-    <br />
-    <p id="circumference" />
-    
     <script>
         var heightSlider = document.getElementById('heightSlider');
         var widthSlider = document.getElementById('widthSlider');
