@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <span>Endre høyde: </span>
+    <input id="heightSlider" type="range" min="0" max="1000" step="1" oninput="calculate()" />
+
+    <span>Endre bredde:</span>
+    <input id="widthSlider" type="range" min="0" max="1000" step="1" oninput="calculate()" />
+
+    <div id="boks" style="width:500px;height:500px;border:1px solid #000;"></div>
+    <p id="area" />
+    <br />
+    <p id="circumference" />
+    
+    <script>
+        var heightSlider = document.getElementById('heightSlider');
+        var widthSlider = document.getElementById('widthSlider');
+        var boks = document.getElementById('boks');
+        var area = document.getElementById('area');
+        var circumference = document.getElementById('circumference');
+
+
+
+        calculate();
+
+        function calculate() {
+            var height = parseInt(heightSlider.value);
+            var widht = parseInt(widthSlider.value);
+            var areaText = 'Areal: ' + height * widht;
+            var circumferenceText = 'Omkrets:' + height * 2 + widht * 2;
+
+            area.innerHTML = areaText;
+            circumference.innerHTML = circumferenceText;
+            boks.style.height = height + 'px';
+            boks.style.widht = width + 'px';
+
+        }
+
+
+    </script>
+
+</body>
+</html>
