@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .stil {
+            border: 2px dashed pink;
+            background-color: aquamarine;
+            padding: 30px;
+            margin: 49px;
+            color: black;
+            display: inline;
+        }
+        .stil2 {
+            border: 10px dotted pink;
+            background-color: lightslategray;
+            padding: 30px;
+            margin: 49px;
+            color: lightcoral;
+            display: inline;
+        }
+        
+        div.selected::before {
+            content: "🡆";
+}
+        div.selected::after {
+            content: "🡄";
+}
+    </style>
+</head>
+<body>
+    <div id="div1">Hei hei hei</div>
+    <div id="div2">Hadet Hadet Hadet</div>
+    <input id="checkBox" type="checkbox" onchange="toggleStyle()" />
+    <input id="checkBox2" type="checkbox" onchange="toggleStyle()" />
+    <script>
+        function toggleStyle() {
+            var onCheck = document.getElementById('checkBox').checked;
+            var onCheckTo = document.getElementById('checkBox2').checked;
+            
+
+            document.getElementById('div1').classList.toggle('stil', onCheck);
+            document.getElementById('div2').classList.toggle('stil2', onCheckTo);
+            document.getElementById('checkBox').checked = selectedDiv.classList.contains('stil2');
+        }
+
+    </script>
+</body>
+</html>

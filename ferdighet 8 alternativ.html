@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .stil1 {
+            border: 10px dotted hotpink;
+            display:inline;
+        }
+        .stil2 {
+            background-color: lightgray;
+            display:inline;
+        }
+        .stil3 {
+            padding: 10px;
+        }
+        .stil4 {
+            font-weight: bold;
+        }
+        .stil5 {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div id="changeme"> I change</div>
+    <input id="div1" type="checkbox" onchange="selectCheckBox(this)" />
+    <br />
+    <br />
+    <div id="changeme2"> Change me</div>
+    <input id="div2" type="checkbox" onchange="selectCheckBox(this)" />
+    <br />
+    <br />
+    <input id="stil1" type="checkbox" onchange="toggleStyle(this)" />Add border
+    <input id="stil2" type="checkbox" onchange="toggleStyle(this)" />Add background color
+    <input id="stil3" type="checkbox" onchange="toggleStyle(this)" />Add padding
+    <input id="stil4" type="checkbox" onchange="toggleStyle(this)" />Add font weight
+    <input id="stil5" type="checkbox" onchange="toggleStyle(this)" />Add font style
+
+    <script>
+
+        var checkEnabled;
+
+        function selectCheckBox(selected) {
+            if (selected.id == 'div1') { checkEnabled = "changeme" }
+            if (selected.id == 'div2') { checkEnabled = "changeme2" } 
+        }
+
+        function toggleStyle(selectedBox) {
+            var stil;
+            if (selectedBox == stil1) { stil = 'stil1'}
+            if (selectedBox == stil2) { stil = 'stil2' }
+            if (selectedBox == stil3) { stil = 'stil3' }
+            if (selectedBox == stil4) { stil = 'stil4' }
+            if (selectedBox == stil5) { stil = 'stil5' }
+
+            console.log(stil);
+            document.getElementById(checkEnabled).classList.toggle(stil);
+
+        }
+
+    </script>
+</body>
+</html>
