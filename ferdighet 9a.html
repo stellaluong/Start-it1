@@ -6,8 +6,8 @@
     <title></title>
 </head>
 <body>
-    <div id="divA" style="border: 5px solid black; display: inline;" onclick="selected(this)">Høyde</div>
-    <div id="divB" style="border: 5px solid pink; display: inline;" onclick="selected(this)">Bredde</div>
+    <div id="divA" style="border: 5px solid black; display: inline;" onclick="selected(this)">Stella</div>
+    <div id="divB" style="border: 5px solid pink; display: inline;" onclick="selected(this)">Andreas</div>
     <br />
     <br />
     <input id="sliderB" type="range" min="1" max="100" step="1" oninput="calculate(this)" value="1" />
@@ -19,7 +19,7 @@
     <div id="resultat"></div>
     <div id="resultat2"></div>
     <br />
-    <div id="resultat3">Jeg er størst</div>
+    <div id="resultat3">Hvem er størst?</div>
 
     <script>
         var resultatDiv = document.getElementById('resultat');
@@ -53,10 +53,10 @@
         }
         function biggest() {
             if (arealA > arealB) {
-                resultatDiv3.innerHTML = 'arealA er størst'
+                resultatDiv3.innerHTML = '<b>Stella</b> er størst'
             }
             else if (arealB > arealA) {
-                resultatDiv3.innerHTML = '<b>ArealB</b> er størst'
+                resultatDiv3.innerHTML = '<b>Andreas</b> er størst'
 
             }
 
