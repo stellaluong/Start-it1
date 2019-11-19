@@ -1,0 +1,48 @@
+﻿
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+    <button onclick="nummer(this)">1</button>
+    <button onclick="nummer(this)">2</button>
+    <button onclick="nummer(this)">3</button>
+    <button onclick="nummer(this)">4</button>
+    <button onclick="nummer(this)">5</button>
+    <button onclick="nummer(this)">6</button>
+    <button onclick="nummer(this)">7</button>
+    <button onclick="nummer(this)">8</button>
+    <button onclick="nummer(this)">9</button>
+    <br />
+    <br />
+    Kode:<div id="info"></div>
+    
+    <script>
+        var correctCode = '1234';
+        var output = document.getElementById("info");
+        var intastetKode;
+
+    function nummer(telling) {
+        output.innerHTML += telling.innerHTML + '';
+        intastetKode = output.innerHTML;
+        console.log(intastetKode, correctCode);
+            if (intastetKode == correctCode) {
+        output.innerHTML = 'Åpen';
+
+        }
+            if (intastetKode.length == 5) {
+                instastetKode = '';
+                output.innerHTML = '';
+            }
+        }
+       
+        
+        </script>
+</body >
+
+
+</html >
