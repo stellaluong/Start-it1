@@ -2,7 +2,7 @@ Summen av varene og betalingsmetode;
 
 if (kontant) {
 Ta imot betaling;
-if (betaling == kostnad)
+if (!betaling == kostnad)
 
 tilgode tilbake;
 si takk;
