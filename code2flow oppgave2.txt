@@ -1,0 +1,18 @@
+Booting of computer;
+//press is the same as very short holding
+if(user is holding f1) {
+  display booting menu;
+if (user selected network) {
+boot from network;
+}
+else
+if (user selectd cd room) 
+boot from cd room;
+else
+boot from default;
+end of booting;
+}
+else { 
+boot from hard drive;
+end of booting;
+}

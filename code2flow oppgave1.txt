@@ -1,0 +1,24 @@
+Summen av varene og betalingsmetode;
+
+if (kontant) {
+Ta imot betaling;
+if (betaling == kostnad)
+
+tilgode tilbake;
+si takk;
+}
+else
+if (kort) {
+skriv inn beløp terminal;
+be kunde gjennomføre betaling terminal;
+si takk;
+}
+else
+if (vipps) {
+  gi kunde vipps nr;
+  be kunde betale i vipps;
+  se kvitteringen til kunden;
+  si takk;
+}
+
+
