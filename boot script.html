@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body onload="load()">
+    <h1 id="input1"></h1>
+    <input id="bootText" type="text" onkeydown="boot(this)">
+    <button id="network" onclick="boot(this)">Boot from network</button>
+    <button id="cdRom" onclick="boot(this)">boot from cdrom</button>
+    <button id="y" onclick="boot(this)">Yes</button>
+    <button id="n" onclick="boot(this)">No</button>
+
+
+    <script>
+        var input = document.getElementById("input1");
+        var boot = document.getElementById("bootText");
+        var network = document.getElementById("network");
+        var cdRom = document.getElementById("cdRom");
+        var clickY = document.getElementById("y");
+        var clickN = document.getElementById("n");
+
+
+        function load() {
+            var input = input1;
+
+            network.style.display = "none";
+            cdRoom.style.display = "none";
+            clickY.style.display = "none";
+            clickN.style.display = "none";
+            input.innerHTML = "press f1";
+
+        }
+
+        function boot(bootmenu) {
+            document.getElementById('input1').innerHTML = 'BootMenu';
+            if (bootmenu == bootText) {
+                bootText.style.display = "none";
+                network.style.display = "initial";
+                cdRoom.style.display = "initial";
+            }
+            if (bootmenu == network) {
+                input1.innerHTML = "booting from network";
+                cdRom.style.display = "none";
+                network.style.display = "none";
+                setTimeout(function () { input1.innerHTML = 'Booted from network' }, 3000);
+            }
+            if (bootmenu == cdRoom) {
+                input1.innerHTML = 'boot from cd rom';
+                cdRom.style.display = "none";
+                network.style.display = "none";
+                clickY.style.display = "initial";
+                clickN.style.display = "initial";
+            }
+            if (bootmenu == clickY) {
+                input1.innerHTML = "booting from CD-ROM";
+                setTimeout(function () { input1.innerHTML = 'booted from CD-ROM' }, 3000);
+                clickY.style.display = "none";
+                clickN.style.display = "none";
+            }
+            if (bootmenu == clickN) {
+                input1.innerHTML = "no boot type selected, booting from default";
+                setTimeout(function () { input1.innerHTML = 'booted from CD-ROM' }, 6000);
+                clickY.style.display = "none";
+                clickN.style.display = "none";
+            }
+
+ </script>
+</body>
+</html>
