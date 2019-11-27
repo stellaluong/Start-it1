@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div {
+            height: 250px;
+            width: 250px;
+        }
+        input {
+            color:black;
+        }
+
+    </style>
+   
+</head>
+<body>
+    <input id="textInput" type="text" oninput="demo(this)" />
+    <select id="selectColor" onchange="demo()">
+        <option id="1" value="black">Black</option>
+        <option id="2" value="darkblue">Dark blue</option>
+        <option id="3" value="lightgray">Light gray</option>
+        <option id="4" value="lightgreen">Light green</option>
+        <option id="5" value="lightcoral">Light red</option>
+    </select>
+    <br />
+    <br />
+    <div id="resultat" />
+
+    <script>
+        var selectedColor = document.getElementById('selectColor');
+        var resultatDiv = document.getElementById('resultat');
+        var textInput = document.getElementById('textInput');
+        demo();
+
+        function demo() {
+
+            if (selectedColor.value == "black" || selectedColor.value == "darkblue") {
+                resultatDiv.innerHTML = '<div style="color: #ffffff; background-color: ' + selectedColor.value + '">' +
+                textInput.value 
+            }
+            if (selectedColor.value == "lightgray" || selectedColor.value == "lightgreen" || selectedColor.value == "lightcoral") {
+                resultatDiv.innerHTML = '<div style="background-color: ' + selectedColor.value + '">' +
+                textInput.value 
+            }
+
+
+        }
+
+    </script>
+</body>
+</html>
