@@ -10,7 +10,6 @@
     background: pink;
   }
      nav {
-    max-width: 1720px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -70,7 +69,7 @@
                 <a href="#night" onclick="picture(this)">Night</a>
             </div>
 
-            <a href="#" class="logo">STELLA'S UNIVERSE</a>
+            <a href="#" class="logo" onclick="picture(this)">STELLA'S UNIVERSE</a>
         </nav>
     </div>
     <div id="morning" style="display: none;" src="morning.jpg">
@@ -90,19 +89,35 @@
         var image3 = document.getElementById('night');
        
 
-        function picture() {
-
-           if (image1.style.display == 'initial') { image1.style.display = ' none' }
-            else {
-                image1.style.display = 'initial'
+        function picture(chosen) {
+            if (chosen.innerHTML == "STELLA'S UNIVERSE") {
+                image1.style.display = 'none';
+                image2.style.display = ' none';
+                image3.style.display = ' none';
             }
-            if (image2.style.display == 'initial') { image2.style.display = ' none' }
-            else {
-                image2.style.display = 'initial'
+            if (chosen.innerHTML == "Morning" && image1.style.display == 'none') {
+                image1.style.display = 'initial';
+                image2.style.display = ' none';
+                image3.style.display = ' none';
             }
-            if (image3.style.display == 'initial') { image3.style.display = ' none' }
-            else {
-                image3.style.display = 'initial'
+            else if (chosen.innerHTML == "Morning" && image1.style.display == 'initial') {
+                image1.style.display = 'none';
+            }
+            if (chosen.innerHTML == "Sunset"  &&  image2.style.display == 'none') {
+                image2.style.display = 'initial';
+                image1.style.display = ' none';
+                image3.style.display = ' none';
+            }
+              else if (chosen.innerHTML == "Sunset" && image2.style.display == 'initial') {
+                image2.style.display = 'none';
+            }
+            if (chosen.innerHTML == "Night"  &&  image3.style.display == 'none') {
+                image3.style.display = 'initial';
+                image1.style.display = ' none';
+                image2.style.display = ' none';
+            }
+            else if (chosen.innerHTML == "Night" && image3.style.display == 'initial') {
+                 image3.style.display = 'none';
             }
           
         }
