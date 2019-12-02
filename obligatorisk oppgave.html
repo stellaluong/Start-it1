@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Stella</title>
+    <style>
+     .navContainer {
+    width: 100%;
+    background: pink;
+  }
+     nav {
+    max-width: 1720px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+  }
+    nav a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            transition: .3s all ease-in-out;
+  }
+     nav a:hover {
+    opacity: .6;
+  }
+      .leftMenu {
+    grid-column: 2;
+    
+  }
+    .left-menu a {
+    padding: 10px 0;
+    margin-left: 15px;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+
+  .logo {
+    grid-column: 2;
+    font-size: 40px;
+    padding: 1rem;
+  }
+   .leftMenu a {
+    padding: 10px 0;
+    margin-left: 15px;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+   .cover {
+  object-fit: cover;
+  width: 100%;
+}
+   body {
+       margin: 0%;
+       padding: 0%;
+   }
+  
+    </style>
+</head>
+<body>
+    <div class="navContainer">
+        <nav>
+
+            <div class="leftMenu">
+                <a href="#morning" onclick="picture(this)">Morning</a>
+                <a href="#sunset" onclick="picture(this)">Sunset</a>
+                <a href="#night" onclick="picture(this)">Night</a>
+            </div>
+
+            <a href="#" class="logo">STELLA'S UNIVERSE</a>
+        </nav>
+    </div>
+    <div id="morning" style="display: none;" src="morning.jpg">
+        <img src="morning.jpg" class="cover" alt="">
+    </div>
+    <div id="sunset" style="display: none;" src="sunset.jpeg" >
+        <img src="sunset.jpeg" class="cover" alt="">
+    </div>
+    <div id="night" style="display: none;" src="night.jpg">
+        <img src="night.jpg" class="cover" alt="">
+    </div>
+
+    <script>
+        var picture1 = document.getElementById('picture');
+        var image1 = document.getElementById('morning');
+        var image2 = document.getElementById('sunset');
+        var image3 = document.getElementById('night');
+        var picture;
+            console.log(picture)
+
+        function picture() {
+
+           if (image1.style.display == 'initial') { image1.style.display = ' none' }
+            else {
+                image1.style.display = 'initial'
+            }
+            if (image2.style.display == 'initial') { image2.style.display = ' none' }
+            else {
+                image2.style.display = 'initial'
+            }
+            if (image3.style.display == 'initial') { image3.style.display = ' none' }
+            else {
+                image3.style.display = 'initial'
+            }
+          
+        }
+
+    </script>
+</body>
+</html>
