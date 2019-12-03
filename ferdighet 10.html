@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<h2 ondblclick="showDiv(300,100, 'Dobbel click', 'gray')">Dobbel klikk</h2>
+<h3 oncontextmenu="showDiv(100,100, 'Right click', 'pink')">Right click</h3>
+<input type="text" onkeydown="showDiv(100,300, 'Press a key', 'lightblue')">Press a key
+<div id="resultat"></div>  
+
+<script>
+    var resultatDiv = document.getElementById('resultat');
+    function showDiv(width, height, text, color) {
+        text = text + '';
+        var backgroundColorStyle = 'background-color:' + color + ';';
+        var widthStyle = 'width: ' + width + 'px;';
+        var heightStyle = 'height: ' + height + 'px;';
+        var style = 'style="' + backgroundColorStyle + widthStyle + heightStyle + '"';
+        resultatDiv.innerHTML = '<div ' + style + '>' + text + '</div>';
+        console.log(showDiv)
+    }
+
+
+</script>
+</body>
+</html>
