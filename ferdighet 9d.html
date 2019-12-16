@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="info"></div>
+    <ul>
+        Endre på tekstene
+    </ul>
+    <input type="text" id="txt1" oninput="findFirst()" value="Stella" /><br />
+    <input type="text" id="txt2" oninput="findFirst()" value="Andreas" /><br />
+    <input type="text" id="txt3" oninput="findFirst()" value="Ingrid" /><br />
+    <input type="text" id="txt4" oninput="findFirst()" value="Bob Kåre" /><br />
+    <script>
+
+        var infoDiv = document.getElementById('info');
+        var tekst1 = document.getElementById('txt1');
+        var tekst2 = document.getElementById('txt2');
+        var tekst3 = document.getElementById('txt3');
+        var tekst4 = document.getElementById('txt4');
+
+        findFirst();
+
+        function findFirst() {
+            var txt1 = tekst1.value;
+            var txt2 = tekst2.value;
+            var txt3 = tekst3.value;
+            var txt4 = tekst4.value;
+
+            infoDiv.innerHTML = 'Om vi sorterer de tekstene, er denne den første:<br>';
+            if (txt1 <= txt2 && txt1 <= txt3 && txt1 <= txt4) infoDiv.innerHTML += txt1;
+            else if (txt2 <= txt3) infoDiv.innerHTML += txt2;
+            else if (txt3 <= txt4) infoDiv.innerHTML += txt3;
+            else infoDiv.innerHTML += txt4;
+            console.log(findFirst)
+        }
+
+    </script>
+</body>
+</html>

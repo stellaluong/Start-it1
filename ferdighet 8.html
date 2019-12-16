@@ -35,6 +35,8 @@
     <div id="div2">Hadet Hadet Hadet</div>
     <input id="checkBox" type="checkbox" onchange="toggleStyle()" />
     <input id="checkBox2" type="checkbox" onchange="toggleStyle()" />
+
+
     <script>
         function toggleStyle() {
             var onCheck = document.getElementById('checkBox').checked;
@@ -43,7 +45,7 @@
 
             document.getElementById('div1').classList.toggle('stil', onCheck);
             document.getElementById('div2').classList.toggle('stil2', onCheckTo);
-            document.getElementById('checkBox').checked = selectedDiv.classList.contains('stil2');
+            
         }
 
     </script>

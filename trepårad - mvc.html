@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Tre på rad</title>
+    <style type="text/css">
+        div {
+            user-select: none;
+        }
+
+            div.cell {
+                background-color: lightgray;
+                width: 100px;
+                height: 100px;
+                float: left;
+                margin: 2px;
+                font-size: 500%;
+                font-family: helvetica;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            div.first {
+                clear: left;
+            }
+
+            div.coloro {
+                color: blue;
+            }
+
+            div.colorx {
+                color: green;
+            }
+    </style>
+</head>
+<body>
+    <div id="board"></div>
+
+    <script type="text/javascript">
+        // hjelpevariabler for view og controller
+        let boardDiv = document.getElementById('board');
+        
+        // model
+        let board = ['', '', '', '', '', '', '', '', ''];
+        let winner = "";
+        // view
+        show();
+        function show() {
+            let html = '';
+            for (let i = 0; i < 9; i++) {
+                let first = i % 3 == 0 ? 'first' : '';
+                html += `<div onclick="setX(${i})" class="cell color${board[i]} ${first}">${board[i]}</div>
+                           
+                    ` ;
+                checkWinning();
+            }
+            boardDiv.innerHTML = html + ` <div>Vinneren er: ${winner}</div><p onclick="restart()">RESTART</p>`;
+        }
+        // controller
+        
+
+        function setX(index) {
+            console.log(index);
+            if (board[index] === '') {
+                board[index] = 'x';
+                setO();
+                checkConditions();
+            }
+            show();
+        }
+        function setO() {
+            let blankIndexes = Array.from(board.keys()).filter(i => board[i] === '');
+            if (blankIndexes.length === 0) return;
+            let random = Math.floor(Math.random() * blankIndexes.length);
+            let blankIndex = blankIndexes[random];
+            board[blankIndex] = 'o';
+            checkConditions();
+            show();
+            
+        }
+        function checkConditions() {
+             checkWinning(0, 1, 2)
+                || checkWinning(3, 4, 5)
+                || checkWinning(6, 7, 8)
+                || checkWinning(0, 3, 6)
+                || checkWinning(1, 4, 7)
+                || checkWinning(2, 5, 8)
+                || checkWinning(0, 4, 8)
+                || checkWinning(2, 4, 6)
+
+        }
+        function checkWinning(index1, index2, index3) {
+
+            if (board[index1] == 'x' && board[index2] == 'x' && board[index3] == 'x'
+                || board[index1] == 'o' && board[index2] == 'o' && board[index3] == 'o') {
+                    winner = board[index1];
+                console.log(board[index1], "test");}
+            
+        }
+        function restart() {
+            board = ['', '', '', '', '', '', '', '', ''];
+            winner = "";
+            show();
+        }
+    </script>
+</body>
+</html>

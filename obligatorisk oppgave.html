@@ -47,7 +47,7 @@
     font-size: 14px;
     font-weight: 300;
     letter-spacing: 0.5px;
-  }
+   }
    .cover {
   object-fit: cover;
   width: 100%;
@@ -56,72 +56,71 @@
        margin: 0%;
        padding: 0%;
    }
-  
     </style>
 </head>
 <body>
-    <div class="navContainer">
-        <nav>
+        <div class="navContainer">
+            <nav>
 
-            <div class="leftMenu">
-                <a href="#morning" onclick="picture(this)">Morning</a>
-                <a href="#sunset" onclick="picture(this)">Sunset</a>
-                <a href="#night" onclick="picture(this)">Night</a>
-            </div>
+                <div class="leftMenu">
+                    <a href="#morning" onclick="picture(this)">Morning</a>
+                    <a href="#sunset" onclick="picture(this)">Sunset</a>
+                    <a href="#night" onclick="picture(this)">Night</a>
+                </div>
 
-            <a href="#" class="logo" onclick="picture(this)">STELLA'S UNIVERSE</a>
-        </nav>
-    </div>
-    <div id="morning" style="display: none;" src="morning.jpg">
-        <img src="morning.jpg" class="cover" alt="">
-    </div>
-    <div id="sunset" style="display: none;" src="sunset.jpeg" >
-        <img src="sunset.jpeg" class="cover" alt="">
-    </div>
-    <div id="night" style="display: none;" src="night.jpg">
-        <img src="night.jpg" class="cover" alt="">
-    </div>
+                <a href="#" class="logo" onclick="picture(this)">STELLA'S UNIVERSE</a>
+            </nav>
+        </div>
+        <div id="morning" style="display: none;" src="morning.jpg">
+            <img src="morning.jpg" class="cover" alt="">
+        </div>
+        <div id="sunset" style="display: none;" src="sunset.jpeg">
+            <img src="sunset.jpeg" class="cover" alt="">
+        </div>
+        <div id="night" style="display: none;" src="night.jpg">
+            <img src="night.jpg" class="cover" alt="">
+        </div>
+        <script>
+            var picture1 = document.getElementById('picture');
+            var image1 = document.getElementById('morning');
+            var image2 = document.getElementById('sunset');
+            var image3 = document.getElementById('night');
 
-    <script>
-        var picture1 = document.getElementById('picture');
-        var image1 = document.getElementById('morning');
-        var image2 = document.getElementById('sunset');
-        var image3 = document.getElementById('night');
-       
 
-        function picture(chosen) {
-            if (chosen.innerHTML == "STELLA'S UNIVERSE") {
-                image1.style.display = 'none';
-                image2.style.display = ' none';
-                image3.style.display = ' none';
-            }
-            if (chosen.innerHTML == "Morning" && image1.style.display == 'none') {
-                image1.style.display = 'initial';
-                image2.style.display = ' none';
-                image3.style.display = ' none';
-            }
-            else if (chosen.innerHTML == "Morning" && image1.style.display == 'initial') {
-                image1.style.display = 'none';
-            }
-            if (chosen.innerHTML == "Sunset"  &&  image2.style.display == 'none') {
-                image2.style.display = 'initial';
-                image1.style.display = ' none';
-                image3.style.display = ' none';
-            }
-              else if (chosen.innerHTML == "Sunset" && image2.style.display == 'initial') {
-                image2.style.display = 'none';
-            }
-            if (chosen.innerHTML == "Night"  &&  image3.style.display == 'none') {
-                image3.style.display = 'initial';
-                image1.style.display = ' none';
-                image2.style.display = ' none';
-            }
-            else if (chosen.innerHTML == "Night" && image3.style.display == 'initial') {
-                 image3.style.display = 'none';
-            }
-          
-        }
 
-    </script>
+            function picture(chosen) {
+                if (chosen.innerHTML == "STELLA'S UNIVERSE") {
+                    image1.style.display = 'none';
+                    image2.style.display = ' none';
+                    image3.style.display = ' none';
+                }
+                if (chosen.innerHTML == "Morning" && image1.style.display == 'none') {
+                    image1.style.display = 'initial';
+                    image2.style.display = ' none';
+                    image3.style.display = ' none';
+                }
+                else if (chosen.innerHTML == "Morning" && image1.style.display == 'initial') {
+                    image1.style.display = 'none';
+                }
+                if (chosen.innerHTML == "Sunset" && image2.style.display == 'none') {
+                    image2.style.display = 'initial';
+                    image1.style.display = ' none';
+                    image3.style.display = ' none';
+                }
+                else if (chosen.innerHTML == "Sunset" && image2.style.display == 'initial') {
+                    image2.style.display = 'none';
+                }
+                if (chosen.innerHTML == "Night" && image3.style.display == 'none') {
+                    image3.style.display = 'initial';
+                    image1.style.display = ' none';
+                    image2.style.display = ' none';
+                }
+                else if (chosen.innerHTML == "Night" && image3.style.display == 'initial') {
+                    image3.style.display = 'none';
+                }
+
+            }
+
+        </script>
 </body>
 </html>

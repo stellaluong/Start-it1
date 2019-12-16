@@ -17,15 +17,30 @@
     <button onclick="nummer(this)">7</button>
     <button onclick="nummer(this)">8</button>
     <button onclick="nummer(this)">9</button>
-
-    <div id="info">Klikk</div>
+    <br />
+    <br />
+    Kode:<div id="info"></div>
     
     <script>
-    var output = document.getElementById("info");
-    function nummer(telling) {
-        output.innerHTML += telling.innerHTML + '-';
-    }
+        var correctCode = '1234';
+        var output = document.getElementById("info");
+        var intastetKode;
 
+    function nummer(telling) {
+        output.innerHTML += telling.innerHTML + '';
+        intastetKode = output.innerHTML;
+        console.log(intastetKode, correctCode);
+            if (intastetKode == correctCode) {
+        output.innerHTML = 'Åpen';
+
+        }
+            if (intastetKode.length == 5) {
+                instastetKode = '';
+                output.innerHTML = '';
+            }
+        }
+       
+        
         </script>
 </body >
 
