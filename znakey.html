@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table {
+            border: none;
+            border-collapse: collapse;
+            background-color: lightblue;
+        }
+
+        table, td {
+            margin: 0;
+            padding: 0;
+            border: 1px solid gray;
+        }
+
+        td {
+            width: 14px;
+            height: 14px;
+        }
+
+            td.snake {
+                background-color: mediumblue;
+            }
+
+            td.food {
+                background-color: orangered;
+            }
+    </style>
+</head>
+<body onkeydown="return controlSnake(event)">
+    <table id="snakeTable"></table>
+    <script>
+        var snakeModel;
+        initModel();
+        updateView();
+        setInterval(move, 100);
+        function updateView() {
+            var snakeTable = document.getElementById('snakeTable');
+            snakeTable.innerHTML = '';
+            for (var rowIndex = 0; rowIndex < snakeModel.size; rowIndex++) {
+                var tr = snakeTable.insertRow();
+                for (var columnIndex = 0; columnIndex < snakeModel.size; columnIndex++) {
+                    var td = tr.insertCell();
+                }
+            }
+            var bodyPart = snakeModel.snakeHead;
+            while (bodyPart != null) {
+                var td = snakeTable.rows[bodyPart.y].cells[bodyPart.x];
+                td.classList.add('snake');
+                bodyPart = bodyPart.nextBodyPart;
+            }
+            var food = snakeModel.food;
+            var td = snakeTable.rows[food.y].cells[food.x];
+            td.classList.add('food');
+        }
+        function initModel() {
+            snakeModel = { size: 30 };
+            snakeModel.snakeHead = createRandomPosition();
+            snakeModel.food = createRandomPosition();
+            snakeModel.growCount = 3;
+            snakeModel.nextBodyPart = null;
+        }
+        function createRandomPosition() {
+            return {
+                x: Math.floor(Math.random() * snakeModel.size),
+                y: Math.floor(Math.random() * snakeModel.size)
+            }
+        }
+        function createNewSnakeHead() {
+            return {
+                x: snakeModel.snakeHead.x + snakeModel.direction.x,
+                y: snakeModel.snakeHead.y + snakeModel.direction.y,
+                nextBodyPart: snakeModel.snakeHead
+            };
+        }
+        function move() {
+            if (!snakeModel.direction) return;
+            snakeModel.snakeHead = createNewSnakeHead();
+            if (snakeModel.growCount > 0) {
+                snakeModel.growCount--;
+            } else {
+                // Slette siste element
+                var bodyPart = snakeModel.snakeHead;
+                var lastBodyPart = null;
+                while (bodyPart.nextBodyPart != null) {
+                    lastBodyPart = bodyPart;
+                    bodyPart = bodyPart.nextBodyPart;
+                }
+                if (lastBodyPart !== null) {
+                    lastBodyPart.nextBodyPart = null;
+                }
+            }
+            if (snakeModel.snakeHead.x === snakeModel.food.x
+                && snakeModel.snakeHead.y === snakeModel.food.y) {
+                snakeModel.food = createRandomPosition();
+                snakeModel.growCount = 1;
+            }
+            updateView();
+        }
+        function controlSnake(event) {
+            const leftKey = event.keyCode == 37;
+            console.log(leftKey, " <- keycode 37?");
+            const rightKey = event.keyCode == 39;
+            const downKey = event.keyCode == 40;
+            const upKey = event.keyCode == 38;
+
+            if (leftKey && !rightKey) {
+                snakeModel.direction = {
+                    x: -1,
+                    y: 0
+                }
+            }
+            if (upKey && !downKey) {
+                snakeModel.direction = {
+                    x: 0,
+                    y: -1
+                }
+            }
+            if (rightKey && !leftKey) {
+                snakeModel.direction = {
+                    x: 1,
+                    y: 0
+                }
+            }
+            if (downKey && !upKey) {
+                snakeModel.direction = {
+                    x: 0,
+                    y: 1
+                }
+                console.log(controlSnake)
+            }
+        }
+    </script>
+</body>
+</html>
