@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FODMap</title>
+    <style>
+  .parent {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 2 / 2 / 5; }
+.div2 { grid-area: 2 / 2 / 6 / 5; }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="div1"> </div>
+        <div class="div2"> </div>
+        </div>
+</body>
+</html>
