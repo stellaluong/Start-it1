@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      
+    <link rel="stylesheet" href="vinlotteri.css" />
+    <script src="model.js"></script>
+    <script src="common.js"></script>
+    <script src="persons.js"></script>
+    <script src="winners.js"></script>
+
+
+</head>
+<body>
+        </script>
+
+
+  <div class="page" id="page">
+      <div class="header" id="header">
+          <button class="knapp" onclick="visOgSkjulMeny()">☰</button> Vinlotterix 🍷
+        </div>
+        <div class="board" id="board"></div>
+        <div class="meny" id="meny">
+            <button class="knapp fixed" onclick="showPersons()">Personer</button><br />
+            <button class="knapp fixed" onclick="showDrawn()">Vinnere</button><br />
+        </div>
+    </div>
+
+<script>
+showPersons();
+
+function visOgSkjulMeny() {
+            document.getElementById('page').classList.toggle('pageUtenMeny');
+        }
+</script>
+</body>
+</html>
