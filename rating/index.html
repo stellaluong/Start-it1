@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-auto-add-css="false"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.12.0/css/svg-with-js.css" rel="stylesheet" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questions</title>
+    <style>
+
+        .checked {
+            color: gold;
+            
+        }
+        </style>
+
+</head>
+<body>
+
+    <br>
+    <div class="col-md-3"></div>
+	<div class="col-md-6 well">
+    <div>
+        <h4>Question 1/5:</h4>
+        <div id="question">How was your mood today?</div>
+        <br>
+    <fieldset>
+        <input onmouseover="startRating(this)" starRating="starmark(this)" id="1" style="font-size:40px;cursor:pointer;"  class="far fa-star checked"/>
+        <input onmouseover="startRating(this)" starRating="starmark(this)" id="2" style="font-size:40px;cursor:pointer;"  class="far fa-star"/>
+        <input onmouseover="startRating(this)" starRating="starmark(this)" id="3" style="font-size:40px;cursor:pointer;"  class="far fa-star"/>
+        <input onmouseover="startRating(this)" starRating="starmark(this)" id="4" style="font-size:40px;cursor:pointer;"  class="far fa-star"/>
+        <input onmouseover="startRating(this)" starRating="starmark(this)" id="5" style="font-size:40px;cursor:pointer;"  class="far fa-star"/>
+        <input onmouseover="startRating(this)" starRating="starmark(this)" id="6" style="font-size:40px;cursor:pointer;"  class="far fa-star"/>
+      </fieldset>
+    </div>
+    <br />
+      <div class="form-group">
+          <h6>Additional comment:</h6>
+          <textarea id="review" class="form-control" style="resize:none; width: 300px; height:100px;"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success" onclick="next()">NEXT</button>
+        <br />
+        <div id="result"></div>
+        <br>
+</div>
+</div>
+    <script src="script.js">
+    </script>	
+</body>
+</html>
